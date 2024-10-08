@@ -47,7 +47,7 @@
 
         fetch("https://api.github.com/users/marcelosoaresdev")
           .then((res) => {
-            console.log(res)
+            return res.json()
           })
           .then((json) => {
             avatar.src = json.avatar_url;
@@ -56,7 +56,7 @@
             repositorio.innerText = json.public_repos;
             followers.innerText = json.followers;
             following.innerText = json.following;
-            profile.href = json.html_url;
+            profile.href = json.html_url
           });
       });
     </script>
